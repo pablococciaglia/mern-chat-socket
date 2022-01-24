@@ -1,0 +1,57 @@
+.container {
+	z-index: 99;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+}
+.spinner-container {
+	position: fixed;
+	width: 300px;
+	top: 20%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.spinner-container p {
+	text-align: center;
+	font-size: 50px;
+	margin-top: 5px;
+}
+
+#inner {
+	animation: rotate linear;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+	transform-origin: center;
+	transform-box: border-box;
+}
+
+#outer {
+	animation: rotate-inverse linear;
+
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	transform-origin: center;
+	transform-box: border-box;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotateZ(0deg);
+	}
+	100% {
+		transform: rotateZ(360deg);
+	}
+}
+
+@keyframes rotate-inverse {
+	0% {
+		transform: rotateZ(360deg);
+	}
+	100% {
+		transform: rotateZ(0deg);
+	}
+}
